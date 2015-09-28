@@ -1,0 +1,7 @@
+C:\Users\robinslsun.TENCENT\Desktop\pic_dotnet_sdk\pic_dotnet_sdk\bin\Debug\pic_dotnet_sdk.exe.config
+C:\Users\robinslsun.TENCENT\Desktop\pic_dotnet_sdk\pic_dotnet_sdk\bin\Debug\pic_dotnet_sdk.exe
+C:\Users\robinslsun.TENCENT\Desktop\pic_dotnet_sdk\pic_dotnet_sdk\bin\Debug\pic_dotnet_sdk.pdb
+C:\Users\robinslsun.TENCENT\Desktop\pic_dotnet_sdk\pic_dotnet_sdk\bin\Debug\Newtonsoft.Json.dll
+C:\Users\robinslsun.TENCENT\Desktop\pic_dotnet_sdk\pic_dotnet_sdk\obj\x86\Debug\pic_dotnet_sdk.csprojResolveAssemblyReference.cache
+C:\Users\robinslsun.TENCENT\Desktop\pic_dotnet_sdk\pic_dotnet_sdk\obj\x86\Debug\pic_dotnet_sdk.exe
+C:\Users\robinslsun.TENCENT\Desktop\pic_dotnet_sdk\pic_dotnet_sdk\obj\x86\Debug\pic_dotnet_sdk.pdb
