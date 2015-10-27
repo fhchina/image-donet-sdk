@@ -36,7 +36,7 @@ namespace QCloud.PicApi
                     //result = pic.Copy(bucketName, fileId);
                     //result = pic.Delete(bucketName, fileId);
                     //result = pic.Detection(bucketName, downloadUrl);
-                    Console.WriteLine(result);
+                    //Console.WriteLine(result);
                 }
                 Console.WriteLine("总用时：" + (end - start) + "毫秒");
             }
