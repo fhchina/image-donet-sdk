@@ -66,7 +66,7 @@ namespace QCloud.PicApi.Api
         /// <returns></returns>
         public string Upload(string bucketName, string localPath, string fileId = null)
         {
-            var url = PICAPI_CGI_URL + appId + "/" + bucketName + "/0/" + (string.IsNullOrEmpty(fileId) ? "" : "?" + HttpUtility.UrlEncode(fileId));
+            var url = PICAPI_CGI_URL + appId + "/" + bucketName + "/0/" + (string.IsNullOrEmpty(fileId) ? "" : HttpUtility.UrlEncode(fileId));
             var header = new Dictionary<string, string>();
             var expired = DateTime.Now.ToUnixTime() / 1000 + 60;
             var sign = Sign.Signature(appId, secretId, secretKey, expired, bucketName);
