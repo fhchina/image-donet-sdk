@@ -37,7 +37,7 @@ namespace QCloud.PicApi.Common
                 return "-1";
             }
             var now = DateTime.Now.ToUnixTime() / 1000;
-            var plainText = string.Format("a={0}&b={1}&k={2}&t={3}&e={4}&l={5}", appId, bucketName, secretId, now, expired, url);
+            var plainText = string.Format("a={0}&b={1}&k={2}&t={3}&e={4}&l={5}", appId, bucketName, secretId, now, expired, System.Web.HttpUtility.UrlEncode(url));
 
             using (HMACSHA1 mac = new HMACSHA1(Encoding.UTF8.GetBytes(secretKey)))
             {
