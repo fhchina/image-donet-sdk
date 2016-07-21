@@ -46,6 +46,45 @@ namespace QCloud.PicApi.Api
         }
 
         /// <summary>
+        /// 图片鉴黄-Urls
+        /// </summary>
+        /// <param name="bucketName">bucket名称</param>
+        /// <param name="url">需要鉴黄图片Url列表</param>
+        /// <returns></returns>
+        public string DetectionUrl(string bucketName, string[] pornUrl)
+        {
+            var header = new Dictionary<string, string>();
+            header.Add("Content-Type", "application/json");
+            var expired = DateTime.Now.ToUnixTime() / 1000 + 1000;
+            var sign = Sign.DetectionSignature(appId, secretId, secretKey, expired, bucketName);
+            header.Add("Authorization", sign);
+            var data = new Dictionary<string, object>();
+            data.Add("appid", appId);
+            data.Add("bucket", bucketName);
+            data.Add("url_list", pornUrl);
+
+            return Request.SendRequest(DETECTIONAPI_CGI_URL, data, HttpMethod.Post, header, timeOut);
+        }
+
+        /// <summary>
+        /// 图片鉴黄-Files
+        /// </summary>
+        /// <param name="bucketName">bucket名称</param>
+        /// <param name="url">需要鉴黄图片File列表</param>
+        /// <returns></returns>
+        public string DetectionFile(string bucketName, string[] pornFile)
+        {
+            var header = new Dictionary<string, string>();
+            var expired = DateTime.Now.ToUnixTime() / 1000 + 1000;
+            var sign = Sign.DetectionSignature(appId, secretId, secretKey, expired, bucketName);
+            header.Add("Authorization", sign);
+            var data = new Dictionary<string, object>();
+            data.Add("appid", appId);
+            data.Add("bucket", bucketName);
+            return Request.SendRequestFiles(DETECTIONAPI_CGI_URL, data, HttpMethod.Post, header, timeOut, pornFile);
+        }
+
+        /// <summary>
         /// 图片查询
         /// </summary>
         /// <param name="bucketName">bucket名称</param>

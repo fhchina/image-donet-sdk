@@ -30,14 +30,15 @@ namespace QCloud.PicApi.Common
             }
         }
 
-        public static string DetectionSignature(int appId, string secretId, string secretKey, long expired, string bucketName, string url)
+        public static string DetectionSignature(int appId, string secretId, string secretKey, long expired, string bucketName, string url = null)
         {
             if (secretId == "" || secretKey == "")
             {
                 return "-1";
             }
             var now = DateTime.Now.ToUnixTime() / 1000;
-            var plainText = string.Format("a={0}&b={1}&k={2}&t={3}&e={4}&l={5}", appId, bucketName, secretId, now, expired, System.Web.HttpUtility.UrlEncode(url));
+            //var plainText = string.Format("a={0}&b={1}&k={2}&t={3}&e={4}&l={5}", appId, bucketName, secretId, now, expired, System.Web.HttpUtility.UrlEncode(url));
+            var plainText = string.Format("a={0}&b={1}&k={2}&t={3}&e={4}", appId, bucketName, secretId, now, expired);
 
             using (HMACSHA1 mac = new HMACSHA1(Encoding.UTF8.GetBytes(secretKey)))
             {
